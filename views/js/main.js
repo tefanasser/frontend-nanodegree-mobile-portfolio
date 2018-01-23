@@ -422,6 +422,7 @@ var resizePizzas = function(size) {
   changeSliderLabel(size);
 
    // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
+   // chaging the size into percentage to avoid performance issue
   function determineDx (elem, size) {
     
     function sizeSwitcher (size) {
@@ -445,6 +446,7 @@ var resizePizzas = function(size) {
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
+  	// take tis out side of the loop
 var all= document.querySelectorAll(".randomPizzaContainer");
 
     for (var i = 0; i < all.length; i++) {
@@ -501,8 +503,9 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-
+// replace selectorAll with byClassname
   var items = document.getElementsByClassName('mover');
+ // take this outside of the loop 
   var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   for (var i = 0; i < items.length; i++) {
     // document.body.scrollTop is no longer supported in Chrome.

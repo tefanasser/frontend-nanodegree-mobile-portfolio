@@ -9,7 +9,7 @@ To optimzize the speed the folloing was done
 * inline style.css
 * add media=print to print.css
 * make the analytics javascript async
-*
+
 #### Part 2: Optimize Frames per Second in pizza.html
 
 * change the pizza sizes using percentages 
